@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@theme {
+  --color-burgundy: #580D1D;
+  --color-ink: #0D0B0C;
+  --color-gold: #D6AD68;
+  --color-ivory: #F6EAD8;
+  --font-script: "Pinyon Script", cursive;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+}
+html { background: #0D0B0C; color-scheme: dark; }
+body { margin: 0; font-family: var(--font-serif); color: var(--color-gold);
+  background: radial-gradient(90% 40% at 50% 0%, #580D1D 0, #0D0B0C 75%) fixed, #0D0B0C;
+  padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); }
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s ease, transform .9s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@keyframes pop { 0% { opacity: 0; transform: scale(.85) } 100% { opacity: 1; transform: scale(1) } }
+@keyframes floatUp { 0% { transform: translateY(0) scale(.7); opacity: 0 } 15% { opacity: .9 } 100% { transform: translateY(-90vh) scale(1.2); opacity: 0 } }
+@keyframes glow { from { text-shadow: 0 0 8px rgba(214,173,104,.15) } to { text-shadow: 0 0 30px rgba(214,173,104,.6) } }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none } * { animation: none !important } }
